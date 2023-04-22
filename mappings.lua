@@ -20,6 +20,14 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>rn"] = {
+      function() vim.lsp.buf.rename() end,
+        desc = "Rename current symbol",
+      },
+    ["<leader>lh"] = {
+       function() vim.lsp.buf.hover() end,
+        desc = "Hover symbol details",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
