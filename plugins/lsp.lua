@@ -1,13 +1,5 @@
 return {
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
-        "rust_analyzer",
-      },
-    },
-  },
-  -- {"neovim/nvim-lspconfig",}
+  "williamboman/mason-lspconfig.nvim",
   { "lvimuser/lsp-inlayhints.nvim", config = true },
   {
     "Maan2003/lsp_lines.nvim",
