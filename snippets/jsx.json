@@ -1,0 +1,12 @@
+{
+  "External Dependencies": {
+    "prefix": "edep",
+    "body": ["/**\n * External Dependencies\n */", "$1"],
+    "description": "External Dependencies"
+  },
+  "Internal Dependencies": {
+    "prefix": "idep",
+    "body": ["/**\n * Internal Dependencies\n */", "$1"],
+    "description": "Internal Dependencies"
+  }
+}

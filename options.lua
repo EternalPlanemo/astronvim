@@ -1,4 +1,11 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
+local font_name = "FiraCode Nerd Font Mono:h12";
+local font_size = ":h12";
+
+if jit.os == "OSX" then
+  font_size = ":h14";
+end
+
 return {
   opt = {
     -- set to true or false etc.
@@ -7,7 +14,7 @@ return {
     spell = false,         -- sets vim.opt.spell
     signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
     wrap = false,          -- sets vim.opt.wrap
-    guifont = "FiraCode Nerd Font Mono:h12",
+    guifont = font_name .. font_size,
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
