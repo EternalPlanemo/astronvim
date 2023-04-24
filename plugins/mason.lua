@@ -28,6 +28,7 @@ return {
         "pint",
         "prettier",
         "rustfmt",
+        "markdownlint",
       }
     },
   },
