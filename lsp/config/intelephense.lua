@@ -7,9 +7,6 @@ return {
   settings = {
     intelephense = {
       environment = {
-        includePaths = { "/path/to/stuff",
-          "/path/to/more_stuff"
-        },
         phpVersion = "8.1.0",
       },
       files = {
