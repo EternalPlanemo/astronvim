@@ -28,6 +28,7 @@ return {
        function() vim.lsp.buf.hover() end,
         desc = "Hover symbol details",
     },
+    ["Q"] = { "gqq", desc = "Format long line as multiple lines" }
   },
   t = {
     -- setting a mapping to false will disable it
