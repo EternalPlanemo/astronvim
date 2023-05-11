@@ -47,6 +47,13 @@ return {
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end
+      filter = function(client)
+        if vim.bo.filetype == "php" then
+          return client.name == "null-ls"
+        end
+
+        return true
+      end,
     },
     -- enable servers that you already have installed without mason
     servers = {

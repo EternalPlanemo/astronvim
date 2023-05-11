@@ -14,6 +14,9 @@ return {
       },
       completion = {
         maxItems = 100,
+      },
+      format = {
+        enable = false,
       }
     }
   }
