@@ -49,7 +49,7 @@ return {
       -- end
       filter = function(client)
         if vim.bo.filetype == "php" then
-          return client.name == "null-ls"
+          return client.name ~= "intelephense"
         end
 
         return true
