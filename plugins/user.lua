@@ -16,4 +16,5 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load { paths = { "./lua/user/snippets" } } -- load snippets paths
     end,
   },
+  "sainnhe/edge",
 }
