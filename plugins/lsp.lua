@@ -14,7 +14,8 @@ return {
     opts = function()
       return {
         server = require("astronvim.utils.lsp").config "clangd",
-        extensions = { autoSetHints = false },
+        extensions = { autoSetHints = true },
+        ensure_installed = { "clangd" }
       }
     end,
   },

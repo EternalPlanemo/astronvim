@@ -16,6 +16,7 @@ return {
         "tsserver",
         "jsonls",
         "sqlls",
+        "clangd",
       }
     },
   },
