@@ -30,6 +30,7 @@ return {
         "prettier",
         "rustfmt",
         "markdownlint",
+        "clang-format",
       }
     },
   },
