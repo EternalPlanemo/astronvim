@@ -74,17 +74,24 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
+    local autocmd = vim.api.nvim_create_autocmd
+    local augroup = vim.api.nvim_create_augroup
+    local blade_group = augroup("blade", { clear = true })
+
+    vim.filetype.add {
+      pattern = {
+        ["%*.blade.php"] = "blade"
+      }
+    }
+
+    autocmd({ "BufNew", "BufEnter", "BufNewFile" }, {
+      pattern = { "*.blade.php" },
+      desc = "Set up blade_formatter and use html syntax highlighitng",
+      group = blade_group,
+      callback = function ()
+        vim.cmd("set filetype=blade")
+        vim.cmd("set syntax=html")
+      end
+    })
   end,
 }
