@@ -84,11 +84,11 @@ return {
       }
     }
 
-    autocmd({ "BufNew", "BufEnter", "BufNewFile" }, {
+    autocmd({ "BufNew", "BufNew", "BufEnter", "BufNewFile" }, {
       pattern = { "*.blade.php" },
       desc = "Set up blade_formatter and use html syntax highlighitng",
       group = blade_group,
-      callback = function ()
+      callback = function()
         vim.cmd("set filetype=blade")
         vim.cmd("set syntax=html")
       end
