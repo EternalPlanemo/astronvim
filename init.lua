@@ -84,13 +84,21 @@ return {
       }
     }
 
-    autocmd({ "BufNew", "BufNew", "BufEnter", "BufNewFile" }, {
+    autocmd({ "BufNew", "BufEnter" }, {
       pattern = { "*.blade.php" },
       desc = "Set up blade_formatter and use html syntax highlighitng",
       group = blade_group,
       callback = function()
         vim.cmd("set filetype=blade")
         vim.cmd("set syntax=html")
+      end
+    })
+
+    autocmd({ "BufNew", "BufEnter" }, {
+      pattern = { "firestore.rules" },
+      desc = "Use the TS syntax highlighting for firestore.rules",
+      callback = function()
+        vim.cmd("set syntax=typescript")
       end
     })
   end,

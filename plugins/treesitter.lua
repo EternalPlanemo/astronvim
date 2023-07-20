@@ -4,6 +4,9 @@ return {
     ensure_installed = {
       "php",
       "rust",
+      "javascript",
+      "typescript",
+      "cpp",
     },
   },
 }
