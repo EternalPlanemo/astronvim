@@ -101,5 +101,14 @@ return {
         vim.cmd("set syntax=typescript")
       end
     })
+
+    autocmd({ "BufNew", "BufEnter" }, {
+      pattern = { ".env.*" },
+      desc = "Add syntax to .env.testing .env.production and so on",
+      callback = function()
+        vim.cmd("set filetype=sh")
+        vim.cmd("set syntax=sh")
+      end
+    })
   end,
 }
