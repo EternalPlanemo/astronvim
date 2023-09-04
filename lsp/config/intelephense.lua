@@ -17,6 +17,9 @@ return {
       },
       format = {
         enable = false,
+      },
+      stubs = {
+        "imagick"
       }
     }
   }
