@@ -95,6 +95,15 @@ return {
     })
 
     autocmd({ "BufNew", "BufEnter" }, {
+      pattern = { "*.html.twig" },
+      desc = "Set up blade_formatter and use html syntax highlighitng",
+      group = blade_group,
+      callback = function()
+        vim.cmd("set syntax=html")
+      end
+    })
+
+    autocmd({ "BufNew", "BufEnter" }, {
       pattern = { "firestore.rules" },
       desc = "Use the TS syntax highlighting for firestore.rules",
       callback = function()
