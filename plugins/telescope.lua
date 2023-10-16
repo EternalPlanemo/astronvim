@@ -1,0 +1,5 @@
+return {
+    defaults = {
+      preview = false,
+    },
+}
