@@ -17,7 +17,7 @@ return {
 
         opts = opts or {}
         opts.region_check_events = "CursorHold,InsertLeave"
-        opts.delete_check_events = "TextChanged,InsertInter"
+        opts.delete_check_events = "TextChanged,InsertEnter"
 
         require("luasnip.loaders.from_vscode").lazy_load { paths = { "./lua/user/snippets" } } -- load snippets paths
     end,
