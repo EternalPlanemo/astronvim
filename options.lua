@@ -26,6 +26,9 @@ return {
     icons_enabled = true,            -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
   },
+  o = {
+    langmap = "яq,вw,еe,рr,тt,ъy,уu,иi,оo,пp,ш[,щ],аa,сs,дd,фf,гg,хh,йj,кk,лl,зz,ьx,цc,жv,бb,нn,мm,ч`,ЯQ,ВW,ЕE,РR,ТT,ЪY,УU,ИI,ОO,ПP,Ш{,Щ},АA,СS,ДD,ФF,ГG,ХH,ЙJ,КK,ЛL,ЗZ,ЬX,ЦC,ЖV,БB,НN,МM,Ч~"
+  }
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)
