@@ -45,7 +45,14 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      html = {
+        filetypes = { "html", "php", "blade" },
+      },
+      tailwindcss = {
+        filetypes = { "html", "blade", "javascriptreact", "typescriptreact" },
+      },
       intelephense = {
+        filetypes = { "php", "blade" },
         settings = {
           intelephense = {
             environment = {
