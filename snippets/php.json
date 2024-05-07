@@ -1,12 +1,9 @@
 {
   "Opening PHP tag with strict types": {
     "prefix": "phpst",
-    "body": ["<?php\n\ndeclare(strict_types=1);\n\n\n"],
+    "body": [
+      "<?php\n\ndeclare(strict_types=1);\n\n"
+    ],
     "description": "Opening PHP tag with strict types for better JIT"
-  },
-  "Declare strict types": {
-    "prefix": "idep",
-    "body": ["declare(strict_types=1);\n\n"],
-    "description": "Strict types for better JIT"
   }
 }
