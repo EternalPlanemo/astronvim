@@ -5,5 +5,17 @@
       "<?php\n\ndeclare(strict_types=1);\n\n"
     ],
     "description": "Opening PHP tag with strict types for better JIT"
+  },
+  "Ignore PHPStan warning on next line": {
+    "prefix": "ignorenext",
+    "body": [
+      "// @phpstan-ignore-next-line"
+    ]
+  },
+  "Ignore PHPStan warning on current line": {
+    "prefix": "ignoreline",
+    "body": [
+      "// @phpstan-ignore-line"
+    ]
   }
 }
