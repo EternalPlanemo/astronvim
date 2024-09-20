@@ -66,6 +66,7 @@ return {
             },
             stubs = {
               "imagick",
+              "random",
               "amqp",
               "apache",
               "apcu",
