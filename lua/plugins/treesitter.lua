@@ -12,6 +12,7 @@ return {
       "zig",
       "go",
       "html",
+      "firestore_rules",
       -- add more arguments for adding more treesitter parsers
     })
   end,
@@ -19,14 +20,23 @@ return {
     require("nvim-treesitter.configs").setup(opts)
 
     --- @class ParserInfo[] parser_config
-    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
     parser_config.blade = {
       install_info = {
         url = "https://github.com/EmranMR/tree-sitter-blade",
-        files = {"src/parser.c"},
+        files = { "src/parser.c" },
         branch = "main",
       },
-      filetype = "blade"
+      filetype = "blade",
     }
-  end
+
+    parser_config.firestore_rules = {
+      install_info = {
+        url = "/Volumes/Projects/treesitter-firestore",
+        files = { "src/parser.c" },
+      },
+      filetype = "firestore_rules",
+    }
+  end,
 }
