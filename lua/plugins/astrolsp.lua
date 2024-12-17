@@ -32,7 +32,6 @@ return {
         -- "lua_ls",
         "intelephense",
         "html",
-        "stimulus_ls",
       },
       timeout_ms = 5000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -287,14 +286,13 @@ return {
     -- A custom `on_attach` function to be run after the default `on_attach` function
     -- takes two parameters `client` and `bufnr`  (`:h lspconfig-setup`)
     on_attach = function(client, bufnr)
+      local filetype = vim.bo[bufnr].filetype
+
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
-      if client.name == "intelephense" then
-        client.capabilities.textDocument.formatting = nil
-        client.server_capabilities.documentFormattingProvider = false
-        client.config.capabilities.textDocument.formatting = nil
-        client.dynamic_capabilities.capabilities.formatting = nil
-      end
+      if client.name == "intelephense" then client.capabilities.textDocument.formatting = nil end
+
+      if client.name == "html" and filetype == "php" then client.server_capabilities.renameProvider = nil end
     end,
   },
 }
