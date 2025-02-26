@@ -64,6 +64,10 @@ return {
         ["<Leader>fg"] = {
           function() require("telescope.builtin").git_status() end,
           desc = "Find files with Git changes"
+        },
+        ["<Leader>D"] = {
+          "<cmd>DBUIToggle<cr>",
+          desc = "Toggle DB"
         }
       },
       t = {
