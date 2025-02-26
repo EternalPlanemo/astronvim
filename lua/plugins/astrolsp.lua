@@ -57,7 +57,7 @@ return {
         settings = {
           intelephense = {
             environment = {
-              phpVersion = "8.4.0",
+              phpVersion = "8.3.0",
             },
             files = {
               maxSize = 5000000,
