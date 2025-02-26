@@ -12,7 +12,6 @@ return {
         "lua_ls",
         "intelephense",
         "ts_ls",
-        "eslint-lsp",
         "stimulus_ls",
         "zls",
         "gopls",
