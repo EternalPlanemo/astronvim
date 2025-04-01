@@ -3,6 +3,8 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+local lspconfig = require "lspconfig"
+
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -41,6 +43,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "sourcekit",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -51,6 +54,11 @@ return {
       },
       tailwindcss = {
         filetypes = { "html", "blade", "javascriptreact", "typescriptreact" },
+      },
+      sourcekit = {
+        filetypes = { "swift" },
+        root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "compile_commands.json"),
+
       },
       intelephense = {
         filetypes = { "php", "blade" },
