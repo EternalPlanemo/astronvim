@@ -1,14 +1,15 @@
--- Customize Mason plugins
+-- Customize Mason
 
 ---@type LazySpec
 return {
-  -- use mason-lspconfig to configure LSP installations
+  -- use mason-tool-installer for automatically installing Mason packages
   {
-    "williamboman/mason-lspconfig.nvim",
-    -- overrides `require("mason-lspconfig").setup(...)`
-    opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    -- overrides `require("mason-tool-installer").setup(...)`
+    opts = {
+      -- Make sure to use the names found in `:Mason`
+      ensure_installed = {
+        -- LSP
         "lua_ls",
         "intelephense",
         "ts_ls",
@@ -16,34 +17,19 @@ return {
         "zls",
         "gopls",
         "clangd",
-        -- add more arguments for adding more language servers
-      })
-    end,
-  },
-  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
-  {
-    "jay-babu/mason-null-ls.nvim",
-    -- overrides `require("mason-null-ls").setup(...)`
-    opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+
+        -- Formatter
         "prettier",
         "stylua",
         "pint",
-        -- add more arguments for adding more null-ls sources
-      })
-    end,
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+
+        -- DAP
         "python",
-        -- add more arguments for adding more debuggers
-      })
-    end,
+
+        -- Other
+        "tree-sitter-cli",
+      },
+    },
   },
   {
     "kristijanhusak/vim-dadbod-ui",
@@ -62,5 +48,5 @@ return {
       vim.g.db_ui_use_nerd_fonts = 1
     end,
   },
-  "swiftlang/sourcekit-lsp"
+  "swiftlang/sourcekit-lsp",
 }
