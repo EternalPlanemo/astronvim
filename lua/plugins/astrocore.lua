@@ -3,6 +3,9 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+-- Helper function for transparency formatting
+local alpha = function() return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8))) end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -42,10 +45,10 @@ return {
         signcolumn = "yes", -- sets vim.opt.signcolumn to auto
         wrap = true, -- sets vim.opt.wrap
       },
-      g = { -- vim.g.<key>
-        -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-        -- This can be found in the `lua/lazy_setup.lua` file
+      g = {
+        neovide_opacity = 0.4,
+        transparency = 0.8,
+        neovide_background_color = "#0f1117" .. alpha(),
       },
     },
     -- Mappings can be configured through AstroCore as well.
