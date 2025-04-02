@@ -76,7 +76,7 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         ["<Leader>fg"] = {
-          function() require("telescope.builtin").git_status() end,
+          function() require("snacks.picker").git_status() end,
           desc = "Find files with Git changes",
         },
         ["<Leader>D"] = {

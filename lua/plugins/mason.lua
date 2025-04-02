@@ -10,10 +10,10 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- LSP
-        "lua_ls",
+        "lua-language-server",
         "intelephense",
-        "ts_ls",
-        "stimulus_ls",
+        "typescript-language-server",
+        "stimulus-language-server",
         "zls",
         "gopls",
         "clangd",
@@ -24,7 +24,7 @@ return {
         "pint",
 
         -- DAP
-        "python",
+        "debugpy",
 
         -- Other
         "tree-sitter-cli",
