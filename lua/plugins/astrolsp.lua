@@ -58,7 +58,6 @@ return {
       sourcekit = {
         filetypes = { "swift" },
         root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "compile_commands.json"),
-
       },
       intelephense = {
         filetypes = { "php", "blade" },
