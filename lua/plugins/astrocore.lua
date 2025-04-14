@@ -84,6 +84,12 @@ return {
           desc = "Toggle DB",
         },
       },
+      v = {
+        ["<Leader>hr"] = {
+          function() require("hex2rgb").replace_hex_with_rgb() end,
+          desc = "Replace hex with RGB",
+        },
+      },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
