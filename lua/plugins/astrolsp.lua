@@ -267,7 +267,7 @@ return {
           callback = function() vim.lsp.buf.document_highlight() end,
         },
         {
-          event = { "CursorMoved", "CursorMovedI", "BufLeave" },
+          event = { "CursorMoved", "CursorMovedI", "BufLeave", "InsertLeave" },
           desc = "Document Highlighting Clear",
           callback = function() vim.lsp.buf.clear_references() end,
         },
