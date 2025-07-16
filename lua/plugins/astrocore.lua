@@ -83,6 +83,10 @@ return {
           "<cmd>DBUIToggle<cr>",
           desc = "Toggle DB",
         },
+        ["<Leader>U"] = {
+          vim.cmd.UndotreeToggle,
+          desc = "Toggle Undo Tree",
+        },
       },
       v = {
         ["<Leader>hr"] = {
