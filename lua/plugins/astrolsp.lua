@@ -61,6 +61,15 @@ return {
       },
       intelephense = {
         filetypes = { "php", "blade" },
+        capabilities = {
+          textDocument = {
+            completion = {
+              completionItem = {
+                snippetSupport = false,
+              },
+            },
+          },
+        },
         settings = {
           intelephense = {
             environment = {
