@@ -63,7 +63,6 @@ return {
         filetypes = { "php", "blade" },
         capabilities = {
           textDocument = {
-            formatting = nil,
             completion = {
               completionItem = {
                 snippetSupport = false,
@@ -304,6 +303,7 @@ return {
 
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
+      if client.name == "intelephense" then client.capabilities.textDocument.formatting = nil end
 
       if client.name == "html" and filetype == "php" then client.server_capabilities.renameProvider = nil end
     end,
