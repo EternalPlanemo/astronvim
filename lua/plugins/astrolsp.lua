@@ -74,6 +74,9 @@ return {
           intelephense = {
             environment = {
               phpVersion = "8.4.0",
+              includePaths = {
+                vim.fn.expand("~/.config/nvim/intelephense-stubs")
+              }
             },
             files = {
               maxSize = 5000000,
