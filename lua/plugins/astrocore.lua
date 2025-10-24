@@ -93,6 +93,10 @@ return {
           function() require("hex2rgb").replace_hex_with_rgb() end,
           desc = "Replace hex with RGB",
         },
+        ["<Leader>fv"] = {
+          vim.cmd.LaravelConvertRules,
+          desc = "Convert Laravel pipe validation rules to array syntax",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
