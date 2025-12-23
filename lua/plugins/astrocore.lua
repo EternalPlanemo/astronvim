@@ -47,8 +47,8 @@ return {
       },
       g = {
         neovide_opacity = 0.4,
+        neovide_window_blurred = true,
         transparency = 0.8,
-        neovide_background_color = "#0f1117" .. alpha(),
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -89,10 +89,10 @@ return {
         },
       },
       v = {
-        ["<Leader>hr"] = {
-          function() require("hex2rgb").replace_hex_with_rgb() end,
-          desc = "Replace hex with RGB",
-        },
+        -- ["<Leader>hr"] = {
+        --   function() require("hex2rgb").replace_hex_with_rgb() end,
+        --   desc = "Replace hex with RGB",
+        -- },
         ["<Leader>fv"] = {
           vim.cmd.LaravelConvertRules,
           desc = "Convert Laravel pipe validation rules to array syntax",

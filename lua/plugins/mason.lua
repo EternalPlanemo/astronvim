@@ -49,10 +49,10 @@ return {
     end,
   },
   "swiftlang/sourcekit-lsp",
-  {
-    "eternalplanemo/hex2rgb",
-    config = function() require("hex2rgb").setup { keymap = false } end,
-  },
+  -- {
+  --   "EternalPlanemo/hex2rgb",
+  --   config = function() require("hex2rgb").setup { keymap = false } end,
+  -- },
   "mbbill/undotree",
   {
     "nvim-flutter/flutter-tools.nvim",
