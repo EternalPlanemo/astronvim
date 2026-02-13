@@ -12,6 +12,7 @@ return {
       "zig",
       "go",
       "html",
+      "nu",
       -- add more arguments for adding more treesitter parsers
     })
   end,

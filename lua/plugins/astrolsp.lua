@@ -44,10 +44,16 @@ return {
     servers = {
       -- "pyright"
       "sourcekit",
+      "nushell",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      nushell = {
+        cmd = { "nu", "--lsp" },
+        filetypes = { "nu" },
+        root_dir = lspconfig.util.root_pattern(".git", "config.nu"),
+      },
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
       html = {
         filetypes = { "html", "php", "blade" },
@@ -75,8 +81,8 @@ return {
             environment = {
               phpVersion = "8.4.0",
               includePaths = {
-                vim.fn.expand("~/.config/nvim/intelephense-stubs")
-              }
+                vim.fn.expand "~/.config/nvim/intelephense-stubs",
+              },
             },
             files = {
               maxSize = 5000000,
