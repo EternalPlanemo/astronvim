@@ -46,9 +46,9 @@ return {
         wrap = true, -- sets vim.opt.wrap
       },
       g = {
-        neovide_opacity = 0.4,
+        neovide_opacity = 0.8,
         neovide_window_blurred = true,
-        transparency = 0.8,
+        transparency = 0.4,
       },
     },
     -- Mappings can be configured through AstroCore as well.
