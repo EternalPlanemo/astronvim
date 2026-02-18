@@ -20,6 +20,7 @@ return {
         },
       },
     }
+
     return config
   end,
 }
