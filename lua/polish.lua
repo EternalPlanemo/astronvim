@@ -14,14 +14,3 @@ if vim.g.neovide and jit.os == "OSX" then
 end
 
 if vim.g.neovide and jit.os == "Linux" then vim.g.neovide_opacity = 0.9 end
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "*.nu",
-  callback = function()
-    vim.fn.jobstart({ "nufmt", vim.fn.expand "%:p" }, {
-      on_exit = function()
-        vim.cmd "checktime" -- Reloads the file if nufmt changed it
-      end,
-    })
-  end,
-})
