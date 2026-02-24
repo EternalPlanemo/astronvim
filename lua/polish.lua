@@ -3,6 +3,7 @@
 -- fit in the normal config locations above can go here
 
 if vim.g.neovide and jit.os == "OSX" then vim.g.neovide_scale_factor = 1.25 end
+if vim.g.neovide and jit.os == "Linux" then vim.g.neovide_opacity = 0.9 end
 
 if vim.g.neovide and jit.os == "OSX" then
   vim.keymap.set(
@@ -12,5 +13,3 @@ if vim.g.neovide and jit.os == "OSX" then
     { noremap = true, silent = true }
   )
 end
-
-if vim.g.neovide and jit.os == "Linux" then vim.g.neovide_opacity = 0.9 end
