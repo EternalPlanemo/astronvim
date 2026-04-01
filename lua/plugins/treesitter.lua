@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master",
   opts = function(_, opts)
     -- add more things to the ensure_installed table protecting against community packs modifying it
     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
@@ -38,5 +39,8 @@ return {
       },
       filetype = "firestore_rules",
     }
+
+    opts.highlight.additional_vim_regex_highlighting = false;
+    opts.injection = false;
   end,
 }
