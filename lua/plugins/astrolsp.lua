@@ -3,7 +3,13 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local lspconfig = require "lspconfig"
+local function root_dir_with(...)
+  local markers = { ... }
+  return function(bufnr)
+    local bufname = type(bufnr) == "number" and vim.api.nvim_buf_get_name(bufnr) or bufnr
+    return vim.fs.root(bufname, markers)
+  end
+end
 
 ---@type LazySpec
 return {
@@ -52,7 +58,7 @@ return {
       nushell = {
         cmd = { "nu", "--lsp" },
         filetypes = { "nu" },
-        root_dir = lspconfig.util.root_pattern(".git", "config.nu"),
+        root_dir = root_dir_with(".git", "config.nu"),
       },
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
       html = {
@@ -63,7 +69,7 @@ return {
       },
       sourcekit = {
         filetypes = { "swift" },
-        root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "compile_commands.json"),
+        root_dir = root_dir_with(".git", "Package.swift", "compile_commands.json"),
       },
       intelephense = {
         filetypes = { "php", "blade" },
@@ -281,9 +287,11 @@ return {
           -- events to trigger
           event = { "InsertLeave", "BufEnter" },
           -- the rest of the autocmd options (:h nvim_create_autocmd)
-          desc = "Refresh codelens (buffer)",
+          desc = "Enable codelens (buffer)",
           callback = function(args)
-            if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
+            if require("astrolsp").config.features.codelens then
+              vim.lsp.codelens.enable(true, { bufnr = args.buf })
+            end
           end,
         },
       },

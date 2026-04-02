@@ -20,6 +20,21 @@ return {
       highlighturl = true, -- highlight URLs at start
       notifications = false, -- enable notifications at start
     },
+    -- AstroNvim v6 manages Treesitter features here instead of nvim-treesitter modules
+    treesitter = {
+      ensure_installed = {
+        "lua",
+        "vim",
+        "php",
+        "javascript",
+        "typescript",
+        "zig",
+        "go",
+        "html",
+        "nu",
+      },
+      highlight = true,
+    },
     -- passed to `vim.filetype.add`
     filetypes = {
       -- see `:h vim.filetype.add` for usage
