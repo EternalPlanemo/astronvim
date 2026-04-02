@@ -2,7 +2,7 @@
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
-vim.o.guifont = "FiraCode Nerd Font Mono:h16"
+vim.o.guifont = "FiraCode Nerd Font Mono:h18"
 
 -- Bulgarian phonetic layout -> US QWERTY command aliases.
 -- This lets normal/visual/operator commands work while Cyrillic input is active.
